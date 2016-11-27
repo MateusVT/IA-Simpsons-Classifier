@@ -1,0 +1,18 @@
+@relation Simpsons
+@attribute qtdPixel numeric
+@attribute qtdColors numeric
+@attribute qtdPixeisBorda numeric
+@attribute corPredominante {247.99.16,0.8.132,189.173.107,0.107.173,255.0.0,0.156.222,0.66.132,149.189.30}
+@attribute color1 numeric
+@attribute color2 numeric
+@attribute color3 numeric
+@attribute color4 numeric
+@attribute color5 numeric
+@attribute class {Bart,Lisa,Marge,Maggie,Homer}
+@data
+
+310590,242,3043,247.99.16,16709246,942842,9148848,65794,16250873,Bart
+153230,256,12867,0.8.132,12825477,6643570,14805490,197124,2864630,Homer
+55678,245,674,0.8.132,7889715,13555678,8690310,65794,1861082,Lisa
+120106,248,1156,0.156.222,13489128,16606501,131587,588283,1197312,Maggie
+101062,248,781,0.8.132,1265407,65794,7834280,15921387,16774780,Marge

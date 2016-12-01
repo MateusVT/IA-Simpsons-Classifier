@@ -5,23 +5,17 @@
  */
 package ExtratorQtdPixeis;
 
-import ExtratorBorda.ExtratorBorda;
-import ExtratorQtdCores.ExtratorQtdColors;
-import ExtratorBorda.Image;
-import ExtratorCorPredominante.ColorPredominante;
-import ExtratorCoresPredominantes.ColorsPredominantes;
-import ExtratorQtdCores.ExtratorQtdColors;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class ExtratorQtdPixeis {
 
     public int qtdPixeis;
+
+    public ExtratorQtdPixeis() {
+
+    }
 
     public void printPixelARGB(int pixel) {
         int alpha = (pixel >> 24) & 0xff;
@@ -45,77 +39,21 @@ public class ExtratorQtdPixeis {
 //        System.out.println("");
             }
         }
-//          
-        qtdPixeis = (i*j);
-//        System.out.println("Qtd Pixel : " + i * j);
-//        return Integer.toString(qtdPixeis);
+        qtdPixeis = (i * j);
     }
 
     public String getQtdPixeis() {
         return Integer.toString(qtdPixeis);
     }
 
-    public ExtratorQtdPixeis() {
-       
-        
-
-//            try {
-                // get the BufferedImage, using the ImageIO class      
-//                BufferedImage image = ImageIO.read(this.getClass().getResource(diretorio));
-//                marchThroughImage(image);
-//                System.out.println("Imagem Bart " + i);
-//                qtdC.ContadorCores("/Data/Train/bart ("+i+").bmp");
-//                color.carregarImg("/Data/Train/bart ("+i+").bmp");
-//                Image img = new Image("/Data/Train/bart ("+i+").bmp");
-//                shape.setImage(img);
-//                System.out.println("Qtd Pixeis Borda : "+ shape.getCharacteristic().toString());
-//                predominante.setImage(img);
-//                System.out.println("Predominante : "+"["+predominante.getPredominantColor().getRed()+"-"+predominante.getPredominantColor().getGreen()+"-"+predominante.getPredominantColor().getBlue()+"]");
-//                System.out.println();
-//                
-//                System.out.println("Imagem  Lisa" + i);
-//                BufferedImage image2 = ImageIO.read(this.getClass().getResource(diretorio));
-//                marchThroughImage(image2);
-//                qtdC.ContadorCores("/Data/Train/lisa ("+i+").bmp");
-//                color.carregarImg("/Data/Train/lisa ("+i+").bmp");
-//                Image img2 = new Image("/Data/Train/lisa ("+i+").bmp");
-//                shape.setImage(img2);
-//                System.out.println("Qtd Pixeis Borda : "+ shape.getCharacteristic().toString());
-//                predominante.setImage(img2);
-//                System.out.println("Predominante : "+"["+predominante.getPredominantColor().getRed()+"-"+predominante.getPredominantColor().getGreen()+"-"+predominante.getPredominantColor().getBlue()+"]");
-//                System.out.println();
-//                
-//                System.out.println("Imagem  Homer" + i);
-//                BufferedImage image3 = ImageIO.read(this.getClass().getResource(diretorio));
-//                marchThroughImage(image3);
-//                qtdC.ContadorCores("/Data/Train/homer ("+i+").bmp");
-//                color.carregarImg("/Data/Train/homer ("+i+").bmp");
-//                Image img3 = new Image("/Data/Train/homer ("+i+").bmp");
-//                shape.setImage(img3);
-//                System.out.println("Qtd Pixeis Borda : "+ shape.getCharacteristic().toString());
-//                predominante.setImage(img3);
-//                System.out.println("Predominante : "+"["+predominante.getPredominantColor().getRed()+"-"+predominante.getPredominantColor().getGreen()+"-"+predominante.getPredominantColor().getBlue()+"]");
-
-//            } catch (IOException e) {
-//                System.err.println(e.getMessage());
-//            }
-        }
-    
-    
-    public void setImage(String diretorio){
+    public void setImage(String diretorio) {
         try {
-                BufferedImage image = ImageIO.read(this.getClass().getResource(diretorio));
-                percorreImagem(image);
+            BufferedImage image = ImageIO.read(this.getClass().getResource(diretorio));
+            percorreImagem(image);
 
-            } catch (IOException e) {
-                System.err.println(e.getMessage());
-            }
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
-    
-    
     }
-    
 
-    
-//
-//}
+}

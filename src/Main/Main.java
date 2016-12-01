@@ -42,13 +42,13 @@ public class Main {
 //        int marge=10;
         //
         //Aux
-        int bart=1;
-        int homer=1;
-        int lisa=1;
-        int maggie=1;
-        int marge=1;
+        int bart = 1;
+        int homer = 1;
+        int lisa = 1;
+        int maggie = 1;
+        int marge = 1;
         //
-        
+
         Main main = new Main();
         ColorsPredominantes colors = new ColorsPredominantes();
         ExtratorBorda shape = new ExtratorBorda();
@@ -81,9 +81,11 @@ public class Main {
             arquivo.write(test.getQtdPixeis() + "," //qtdPieis
                     + qtdC.ContadorCores(diretorio) + "," //qtdCores
                     + shape.getCharacteristic().toString() + "," //qtdPixelBorda
-                    + colorP.getPredominantColor().getRed() + "." + //Cor Predominante
-                    + colorP.getPredominantColor().getGreen()+ "." + //Cor Predominante
-                    + colorP.getPredominantColor().getBlue() + "," //Cor Predominante
+                    + colorP.getPredominantColor().getRed() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getGreen() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getBlue() + "," //Cor Predominante
                     + Integer.toString(Math.abs(colors.getColors().get(0).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(1).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(2).getRGB())) + "," //Rank 5 Cores Predominantes
@@ -92,7 +94,7 @@ public class Main {
                     + "Bart");
             arquivo.write("\r\n");
         }
-        
+
         for (i = 1; i <= homer; i++) {
             System.out.println("Homer " + i);
 //            diretorio = "/Data/Train/homer (" + i + ").bmp";
@@ -103,13 +105,14 @@ public class Main {
             colorP.setImage(img);
             colors.carregarImg(diretorio);
 
-            
             arquivo.write(test.getQtdPixeis() + "," //qtdPieis
                     + qtdC.ContadorCores(diretorio) + "," //qtdCores
                     + shape.getCharacteristic().toString() + "," //qtdPixelBorda
-                    + colorP.getPredominantColor().getRed() + "." +//Cor Predominante
-                    + colorP.getPredominantColor().getGreen()+ "." + //Cor Predominante
-                    + colorP.getPredominantColor().getBlue() + "," //Cor Predominante
+                    + colorP.getPredominantColor().getRed() + "."
+                    +//Cor Predominante
+                    +colorP.getPredominantColor().getGreen() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getBlue() + "," //Cor Predominante
                     + Integer.toString(Math.abs(colors.getColors().get(0).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(1).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(2).getRGB())) + "," //Rank 5 Cores Predominantes
@@ -118,7 +121,7 @@ public class Main {
                     + "Homer");
             arquivo.write("\r\n");
         }
-        
+
         for (i = 1; i <= lisa; i++) {
             System.out.println("Lisa " + i);
 //            diretorio = "/Data/Train/lisa (" + i + ").bmp";
@@ -132,9 +135,11 @@ public class Main {
             arquivo.write(test.getQtdPixeis() + "," //qtdPieis
                     + qtdC.ContadorCores(diretorio) + "," //qtdCores
                     + shape.getCharacteristic().toString() + "," //qtdPixelBorda
-                    + colorP.getPredominantColor().getRed()+ "." + //Cor Predominante
-                    + colorP.getPredominantColor().getGreen()+ "." + //Cor Predominante
-                    + colorP.getPredominantColor().getBlue() + "," //Cor Predominante
+                    + colorP.getPredominantColor().getRed() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getGreen() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getBlue() + "," //Cor Predominante
                     + Integer.toString(Math.abs(colors.getColors().get(0).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(1).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(2).getRGB())) + "," //Rank 5 Cores Predominantes
@@ -143,7 +148,7 @@ public class Main {
                     + "Lisa");
             arquivo.write("\r\n");
         }
-        
+
         for (i = 1; i <= maggie; i++) {
             System.out.println("Maggie " + i);
 //            diretorio = "/Data/Train/maggie (" + i + ").bmp";
@@ -157,9 +162,11 @@ public class Main {
             arquivo.write(test.getQtdPixeis() + "," //qtdPieis
                     + qtdC.ContadorCores(diretorio) + "," //qtdCores
                     + shape.getCharacteristic().toString() + "," //qtdPixelBorda
-                    + colorP.getPredominantColor().getRed() + "." +//Cor Predominante
-                    + colorP.getPredominantColor().getGreen()+ "." + //Cor Predominante
-                    + colorP.getPredominantColor().getBlue() + "," //Cor Predominante
+                    + colorP.getPredominantColor().getRed() + "."
+                    +//Cor Predominante
+                    +colorP.getPredominantColor().getGreen() + "."
+                    + //Cor Predominante
+                    +colorP.getPredominantColor().getBlue() + "," //Cor Predominante
                     + Integer.toString(Math.abs(colors.getColors().get(0).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(1).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(2).getRGB())) + "," //Rank 5 Cores Predominantes
@@ -168,7 +175,7 @@ public class Main {
                     + "Maggie");
             arquivo.write("\r\n");
         }
-        
+
         for (i = 1; i <= marge; i++) {
             System.out.println("Marge " + i);
 //            diretorio = "/Data/Train/marge (" + i + ").bmp";
@@ -182,9 +189,11 @@ public class Main {
             arquivo.write(test.getQtdPixeis() + "," //qtdPieis
                     + qtdC.ContadorCores(diretorio) + "," //qtdCores
                     + shape.getCharacteristic().toString() + "," //qtdPixelBorda
-                    + colorP.getPredominantColor().getRed() + "." +//Cor Predominante
-                    + colorP.getPredominantColor().getGreen() + "." +//Cor Predominante
-                    + colorP.getPredominantColor().getBlue() + "," //Cor Predominante
+                    + colorP.getPredominantColor().getRed() + "."
+                    +//Cor Predominante
+                    +colorP.getPredominantColor().getGreen() + "."
+                    +//Cor Predominante
+                    +colorP.getPredominantColor().getBlue() + "," //Cor Predominante
                     + Integer.toString(Math.abs(colors.getColors().get(0).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(1).getRGB())) + "," //Rank 5 Cores Predominantes
                     + Integer.toString(Math.abs(colors.getColors().get(2).getRGB())) + "," //Rank 5 Cores Predominantes
@@ -197,5 +206,11 @@ public class Main {
         arquivo.close();
 
     }
+    public void geraTreino(){
+
+}
+    public void geraTest(){
+
+}
 
 }

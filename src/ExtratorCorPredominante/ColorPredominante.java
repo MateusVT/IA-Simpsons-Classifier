@@ -1,15 +1,11 @@
 package ExtratorCorPredominante;
 
 import ExtratorBorda.Image;
-import ExtratorBorda.Extractor;
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-
-public class ColorPredominante implements Extractor<Color> {
+public class ColorPredominante {
 
     private Image image;
     private int bartShirt;
@@ -33,33 +29,6 @@ public class ColorPredominante implements Extractor<Color> {
         this.margeDress = 0;
     }
 
-    @Deprecated
-    private List<Color[][]> separateImage(Color[][] imageColors) {
-        int tam = imageColors.length;
-        int parte = imageColors.length / 3;
-        Color[][] imageColorsTop = null;
-        Color[][] imageColorsMiddle = null;
-        Color[][] imageColorsBottom = null;
-        List<Color[][]> matrixImageSeparate = new ArrayList<>();
-        int linha = 0;
-        for (Color[] colors : imageColorsBottom) {
-            if (linha < parte) {
-                imageColorsTop[linha] = colors;
-            } else if (linha >= parte && linha <= parte * 2) {
-                imageColorsMiddle[linha] = colors;
-            } else {
-                imageColorsTop[linha] = colors;
-            }
-            linha++;
-        }
-
-        matrixImageSeparate.add(imageColorsTop);
-        matrixImageSeparate.add(imageColorsMiddle);
-        matrixImageSeparate.add(imageColorsMiddle);
-
-        return matrixImageSeparate;
-    }
-
     private int normalizeCharacteristic(int characteristic) {
         return characteristic / (image.getColors().length * image.getColors()[0].length);
     }
@@ -72,7 +41,7 @@ public class ColorPredominante implements Extractor<Color> {
      */
     public Color getPredominantColor() {
         if (image == null) {
-            throw new RuntimeException("imagem nula");
+            throw new RuntimeException("Error!");
         }
 
         Integer quantity;
@@ -106,8 +75,21 @@ public class ColorPredominante implements Extractor<Color> {
                 predominantColor = entry;
             }
         }
-        
+
         return predominantColor.getKey();
+    }
+
+    private int compare(Color gave, Color expected) {
+        int tolerance = 20;
+        Color base = new Color(expected.getRGB() - tolerance);
+        Color topo = new Color(expected.getRGB() + tolerance);
+        if (gave.getRGB() < base.getRGB()) {
+            return -1;
+        } else if (gave.getRGB() > topo.getRGB()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public int getBartShirt() {
@@ -140,19 +122,6 @@ public class ColorPredominante implements Extractor<Color> {
 
     public int getMargeDress() {
         return normalizeCharacteristic(margeDress);
-    }
-
-    private int compare(Color gave, Color expected) {
-        int tolerance = 20;
-        Color base = new Color(expected.getRGB() - tolerance);
-        Color topo = new Color(expected.getRGB() + tolerance);
-        if (gave.getRGB() < base.getRGB()) {
-            return -1;
-        } else if (gave.getRGB() > topo.getRGB()) {
-            return 1;
-        } else {
-            return 0;
-        }
     }
 
     public Color getCharacteristic() {

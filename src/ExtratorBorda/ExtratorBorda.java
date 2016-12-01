@@ -1,18 +1,14 @@
 package ExtratorBorda;
-
-import ExtratorBorda.Image;
-import ExtratorBorda.Extractor;
 import java.awt.Color;
 
-//public class ExtratorBorda implements Extractor<Integer> {
-public class ExtratorBorda{
+public class ExtratorBorda {
 
     private Image image;
 
     private Integer[][] getContourImage() {
         Color[][] imageColors = image.getColors();
         Integer[][] imageString = new Integer[imageColors.length][];
-        int cont=0;
+        int cont = 0;
         for (int i = 0; i < imageColors.length; i++) {
             imageString[i] = new Integer[imageColors[i].length];
             for (int j = 0; j < imageColors[i].length; j++) {
@@ -24,7 +20,6 @@ public class ExtratorBorda{
                 }
             }
         }
-//        System.out.println(cont);
         return imageString;
     }
 

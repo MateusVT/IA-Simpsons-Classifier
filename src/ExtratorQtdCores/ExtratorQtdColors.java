@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ExtratorQtdCores;
 
 import java.awt.Color;
@@ -16,10 +11,10 @@ import javax.imageio.ImageIO;
  * @author Torres
  */
 public class ExtratorQtdColors {
-    
+
     public String ContadorCores(String diretorio) {
         BufferedImage image = null;
-        ArrayList<Color> colors = new ArrayList<Color>();
+        ArrayList<Color> colors = new ArrayList<>();
         try {
             image = ImageIO.read(this.getClass().getResource(diretorio));
         } catch (IOException e) {
@@ -37,7 +32,7 @@ public class ExtratorQtdColors {
                 Color color = new Color(red, green, blue);
 
                 //add the first color on array
-                if (colors.size() == 0) {
+                if (colors.isEmpty()) {
                     colors.add(color);
                 } //check for redudancy
                 else if (!(colors.contains(color))) {
@@ -45,7 +40,7 @@ public class ExtratorQtdColors {
                 }
             }
         }
-        
+
         return Integer.toString(colors.size());
     }
 }

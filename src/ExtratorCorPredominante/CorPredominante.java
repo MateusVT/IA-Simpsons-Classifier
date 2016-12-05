@@ -5,26 +5,32 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ColorPredominante {
+public class CorPredominante {
 
-    private Image image;
-    private int bartShirt;
-    private int bartShortsAndShoes;
-    private int homerBeard;
-    private int homerPants;
-    private int lisaDressAndMaggiePacifierAndMargeItems;
-    private int maggiePijamas;
-    private int margeHair;
-    private int margeDress;
+    Image image;
+    int bartShirt;
+    int bartHoddie;
+    int bartShortsAndShoes;
+    int bartSkate;
+    int homerBeard;
+    int homerPants;
+    int lisaDress;
+    int maggiePijamas;
+    int maggiePijamas2;
+    int margeHair;
+    int margeDress;
 
     public void setImage(Image image) {
         this.image = image;
         this.bartShirt = 0;
+        this.bartHoddie = 0;
         this.bartShortsAndShoes = 0;
+        this.bartSkate = 0;
         this.homerBeard = 0;
         this.homerPants = 0;
-        this.lisaDressAndMaggiePacifierAndMargeItems = 0;
+        this.lisaDress = 0;
         this.maggiePijamas = 0;
+        this.maggiePijamas2 = 0;
         this.margeHair = 0;
         this.margeDress = 0;
     }
@@ -33,12 +39,6 @@ public class ColorPredominante {
         return characteristic / (image.getColors().length * image.getColors()[0].length);
     }
 
-    /**
-     * Obtém a cor predominante desconsiderando a margem de erro implementada em
-     * coloExtractorSimple.
-     *
-     * @return
-     */
     public Color getPredominantColor() {
         if (image == null) {
             throw new RuntimeException("Error!");
@@ -48,11 +48,18 @@ public class ColorPredominante {
         HashMap<Color, Integer> colorHasCounter = new HashMap<>();
 
         colorHasCounter.put(new Color(247, 99, 16), 0);//camiseta laranja do Bart
-        colorHasCounter.put(new Color(0, 8, 132), 0);//tenis e shorts do Bart
-        colorHasCounter.put(new Color(189, 173, 107), 0);//barba do Homer
+        colorHasCounter.put(new Color(0, 189, 0), 0);//moletom verde do Bart
+        colorHasCounter.put(new Color(0, 8, 132), 0);//shorts do Bart
+        colorHasCounter.put(new Color(82, 140, 24), 0);//skate do Bart
+
+        colorHasCounter.put(new Color(189, 173, 107), 0);//rosto Homer
         colorHasCounter.put(new Color(0, 107, 173), 0);//calça do Homer
-        colorHasCounter.put(new Color(255, 0, 0), 0);//vestido da Lisa, chupeta da Maggie e Acessórios da Marge
+
+        colorHasCounter.put(new Color(255, 0, 0), 0);//vestido da Lisa
+
         colorHasCounter.put(new Color(0, 156, 222), 0);//vestido da Maggie
+        colorHasCounter.put(new Color(8, 165, 255), 0);//vestido da Maggie2
+
         colorHasCounter.put(new Color(0, 66, 132), 0);//cabelo da Marge
         colorHasCounter.put(new Color(149, 189, 30), 0);//vestido da Marge
 
@@ -90,42 +97,6 @@ public class ColorPredominante {
         } else {
             return 0;
         }
-    }
-
-    public int getBartShirt() {
-        return normalizeCharacteristic(bartShirt);
-    }
-
-    public int getBartShortsAndShoes() {
-        return normalizeCharacteristic(bartShortsAndShoes);
-    }
-
-    public int getHomerBeard() {
-        return normalizeCharacteristic(homerBeard);
-    }
-
-    public int getHomerPants() {
-        return normalizeCharacteristic(homerPants);
-    }
-
-    public int getLisaDressAndMaggiePacifierAndMargeItems() {
-        return normalizeCharacteristic(lisaDressAndMaggiePacifierAndMargeItems);
-    }
-
-    public int getMaggiePijamas() {
-        return normalizeCharacteristic(maggiePijamas);
-    }
-
-    public int getMargeHair() {
-        return normalizeCharacteristic(margeHair);
-    }
-
-    public int getMargeDress() {
-        return normalizeCharacteristic(margeDress);
-    }
-
-    public Color getCharacteristic() {
-        return getPredominantColor();
     }
 
 }

@@ -3,13 +3,13 @@ import java.awt.Color;
 
 public class ExtratorBorda {
 
-    private Image image;
+    Image image;
 
-    private Integer[][] getContourImage() {
+    public Integer[][] getContorno() {
         Color[][] imageColors = image.getColors();
         Integer[][] imageString = new Integer[imageColors.length][];
         int cont = 0;
-        for (int i = 0; i < imageColors.length; i++) {
+        for (int i = 0; i < imageColors.    length; i++) {
             imageString[i] = new Integer[imageColors[i].length];
             for (int j = 0; j < imageColors[i].length; j++) {
                 if (imageColors[i][j].getRGB() != -1) {
@@ -23,7 +23,7 @@ public class ExtratorBorda {
         return imageString;
     }
 
-    private Boolean hasNeightbor(Color[][] imageColors, int i, int j) {
+    public Boolean hasNeightbor(Color[][] imageColors, int i, int j) {
 
         if (j > 0 && imageColors[i][j - 1] != null && imageColors[i][j - 1].getRGB() == -1) {
             return true;
@@ -41,9 +41,9 @@ public class ExtratorBorda {
         this.image = image;
     }
 
-    private int getPerimetro() {
+    public int getPerimetro() {
         int perimetro = 0;
-        for (Integer[] integers : getContourImage()) {
+        for (Integer[] integers : getContorno()) {
             for (Integer aInteger : integers) {
                 if (aInteger != null && aInteger == 1) {
                     perimetro++;

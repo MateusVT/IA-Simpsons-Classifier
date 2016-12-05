@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 
 public class Image {
 
-    private final Color[][] colors;
+    Color[][] colors;
 
     public Image(String diretorio) {
         try {
